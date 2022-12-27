@@ -1,23 +1,13 @@
 import React from 'react';
+import TodoItem from '../todo-item/TodoItem';
+
 
 function TodoList() {
     return (
         <ul>
-            <li>
-                <input type="checkbox" />
-                <span>Take out the trash</span>
-                <button>Delete</button>
-            </li>
-            <li>
-                <input type="checkbox" />
-                <span>Buy groceries</span>
-                <button>Delete</button>
-            </li>
-            <li>
-                <input type="checkbox" />
-                <span>Walk the dog</span>
-                <button>Delete</button>
-            </li>
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
         </ul>
     );
 }
