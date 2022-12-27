@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from '../todo-item/TodoItem';
+import TodoItem from './todo-item/TodoItem';
 
 
 function TodoList() {
