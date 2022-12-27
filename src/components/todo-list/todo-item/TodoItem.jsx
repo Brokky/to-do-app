@@ -1,13 +1,13 @@
 import React from 'react'
 
-function TodoItem() {
+function TodoItem(props) {
     return (
         <li>
             <input type="checkbox" />
-            <span>Take out the trash</span>
+            <span>{props.content}</span>
             <button>Delete</button>
         </li>
     )
 }
 
-export default TodoItem
+export default TodoItem;
