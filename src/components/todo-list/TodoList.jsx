@@ -8,7 +8,7 @@ function TodoList(props) {
 
     return (
         <ul>
-            {items.map( (val, ind) => <TodoItem content={val} key={ind} />)}
+            {items.map( (val, ind) => <TodoItem content={val} key={ind} removeTask={() => props.removeTask(ind)} />)}
         </ul>
     );
 }

@@ -9,16 +9,22 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
 
-  function changeTasks(value) {
+  function addTask(value) {
     let newTasks = [...tasks, value];
+    setTasks(newTasks);
+  }
+
+  function removeTask(index) {
+    let newTasks = [...tasks];
+    newTasks.splice(index, 1);
     setTasks(newTasks);
   }
 
   return (
     <div className="App">
       <Header />
-      <AddForm changeTasks={changeTasks} />
-      <TodoList tasks={tasks} />
+      <AddForm addTask={addTask} />
+      <TodoList tasks={tasks} removeTask={removeTask} />
     </div>
   );
 }

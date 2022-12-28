@@ -7,7 +7,7 @@ function AddForm(props) {
 
         let inputValue = document.querySelector('#input-field').value;
 
-        props.changeTasks(inputValue);
+        props.addTask(inputValue);
     }
 
     return (

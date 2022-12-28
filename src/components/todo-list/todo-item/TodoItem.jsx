@@ -5,7 +5,7 @@ function TodoItem(props) {
         <li>
             <input type="checkbox" />
             <span>{props.content}</span>
-            <button>Delete</button>
+            <button onClick={props.removeTask}>Delete</button>
         </li>
     )
 }
