@@ -5,9 +5,16 @@ function AddForm(props) {
     function addNewTask(e) {
         e.preventDefault();
 
-        let inputValue = document.querySelector('#input-field').value;
+        const inputField = document.querySelector('#input-field');
+
+        let inputValue = inputField.value;
+
+        if (inputValue === '') return;
+
 
         props.addTask(inputValue);
+        inputField.placeholder = 'Add a new to-do';
+        
     }
 
     return (
