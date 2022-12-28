@@ -8,8 +8,17 @@ function TodoList(props) {
 
     return (
         <ul>
-            {items.map( (val, ind) => <TodoItem content={val} key={ind} removeTask={() => props.removeTask(ind)} />)}
-        </ul>
+        {items.map((val) => (
+          <TodoItem
+            key={val.id}
+            id={val.id}
+            content={val.content}
+            selected={val.selected}
+            removeTask={props.removeTask}
+            toggleTaskSelection={props.toggleTaskSelection}
+          />
+        ))}
+      </ul>
     );
 }
 

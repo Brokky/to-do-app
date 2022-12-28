@@ -10,13 +10,22 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   function addTask(value) {
-    let newTasks = [...tasks, value];
+    let newTasks = [...tasks, { id: Date.now(), content: value, selected: false }];
     setTasks(newTasks);
   }
 
-  function removeTask(index) {
-    let newTasks = [...tasks];
-    newTasks.splice(index, 1);
+  function removeTask(id) {
+    let newTasks = tasks.filter(task => task.id !== id);
+    setTasks(newTasks);
+  }
+
+  function toggleTaskSelection(id) {
+    let newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, selected: !task.selected };
+      }
+      return task;
+    });
     setTasks(newTasks);
   }
 
@@ -24,7 +33,7 @@ function App() {
     <div className="App">
       <Header />
       <AddForm addTask={addTask} />
-      <TodoList tasks={tasks} removeTask={removeTask} />
+      <TodoList tasks={tasks} removeTask={removeTask} toggleTaskSelection={toggleTaskSelection} />
     </div>
   );
 }
